@@ -1,0 +1,6 @@
+#!/bin/bash
+
+SRC=$1
+DEST=$2
+
+ln -sf $SRC $DEST

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Install
+
+# Configure
+$UTIL/symlink $DOTFILES/zshrc ~/.zshrc
