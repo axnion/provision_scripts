@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Installation
+apt install keepassx -y
+
+# Configuration
+# None

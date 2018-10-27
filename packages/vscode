@@ -1,16 +1,10 @@
 #!/bin/bash
-PACKAGE_NAME="docker"
+PACKAGE_NAME="vscode"
 
-# Installation function
 function install {
-	apt install apt-transport-https ca-certificates curl software-properties-common -y
-    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
-    add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
-    apt-get update
-    apt-get install $PACKAGE_NAME-ce -y
+	snap install --classic $PACKAGE_NAME
 }
 
-# Checks if pacakge is installed and aborts if already exists.
 function check_package_status {
 	if $UTIL/check_installation $PACKAGE_NAME; then
 		echo "Already installed: $PACKAGE_NAME"
@@ -20,7 +14,6 @@ function check_package_status {
 	fi
 }
 
-# Check if installation was successful, if not it aborts.
 function test_installation {
 	if $UTIL/check_installation $PACKAGE_NAME; then
 		echo "Installation successful: $PACKAGE_NAME"

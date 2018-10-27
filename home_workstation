@@ -1,0 +1,11 @@
+#!/bin/bash
+
+source ./env
+
+$PACKAGES/discord
+$PACKAGES/vscode
+$PACKAGES/docker
+#$PACKAGES/spotify
+#$PACKAGES/keepassx
+#$PACKAGES/google-chrome-stable
+#$PACKAGES/zsh

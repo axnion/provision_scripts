@@ -17,3 +17,8 @@ Personal collection of bash scripts for provisioning and configuration of my wor
 |Slack|-|-|
 |Telegram|-|-|
 |Tilix|-|-|
+
+
+
+# TODO
+* fonts-noto-mono

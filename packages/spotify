@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Installation
+
+if $UTIL/check_installation spotify; then
+	echo "Already installed: Spotify"
+else
+	echo "Installing: Spotify"
+	snap install spotify
+fi
+
+# Configuration
+# None

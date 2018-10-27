@@ -1,5 +1,5 @@
 #!/bin/bash
-PACKAGE_NAME="docker"
+PACKAGE_NAME="docker-compose"
 
 # Installation function
 function install {
