@@ -1,30 +1,34 @@
 #!/bin/bash
 PACKAGE_NAME="vscode"
+TEST_NAME=$PACKAGE_NAME
+DISPLAY_NAME="Visual Studio Code"
 
 function install {
 	snap install --classic $PACKAGE_NAME
 }
 
+# Checks if package is installed and aborts if already exists.
 function check_package_status {
-	if $UTIL/check_installation $PACKAGE_NAME; then
-		echo "Already installed: $PACKAGE_NAME"
+	if $UTIL/check_installation $TEST_NAME; then
+		printf "Already installed: $DISPLAY_NAME\n"
 		exit 0
 	else
-		echo "Installing: $PACKAGE_NAME"
+		printf "Installing: $DISPLAY_NAME... "
 	fi
 }
 
+# Check if installation was successful, if not it aborts.
 function test_installation {
-	if $UTIL/check_installation $PACKAGE_NAME; then
-		echo "Installation successful: $PACKAGE_NAME"
+	if $UTIL/check_installation $TEST_NAME; then
+		printf "succeeded\n"
 		exit 0
 	else
+		printf "failed\n"
 		exit 1
-		echo "Installation failed: $PACKAGE_NAME"
 	fi
 }
 
 # Execution
-check_package_status	# Check if installed
-install			# Install package if missing
-test_installation	# Test if installation was successful
+check_package_status			# Check if installed
+install	> out.log 2> err.log	# Install package if missing
+test_installation				# Test if installation was successful

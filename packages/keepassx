@@ -1,7 +1,35 @@
 #!/bin/bash
+PACKAGE_NAME="keepassx"
+TEST_NAME=$PACKAGE_NAME
+DISPLAY_NAME="KeePassX"
 
-# Installation
-apt install keepassx -y
+# Installation function
+function install {
+	apt install $PACKAGE_NAME -y
+}
 
-# Configuration
-# None
+# Checks if package is installed and aborts if already exists.
+function check_package_status {
+	if $UTIL/check_installation $TEST_NAME; then
+		printf "Already installed: $DISPLAY_NAME\n"
+		exit 0
+	else
+		printf "Installing: $DISPLAY_NAME... "
+	fi
+}
+
+# Check if installation was successful, if not it aborts.
+function test_installation {
+	if $UTIL/check_installation $TEST_NAME; then
+		printf "succeeded\n"
+		exit 0
+	else
+		printf "failed\n"
+		exit 1
+	fi
+}
+
+# Execution
+check_package_status			# Check if installed
+install > out.log 2> err.log	# Install package if missing
+test_installation				# Test if installation was successful

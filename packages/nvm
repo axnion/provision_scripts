@@ -1,11 +1,13 @@
 #!/bin/bash
-PACKAGE_NAME="spotify"
-TEST_NAME=$PACKAGE_NAME
-DISPLAY_NAME="Spotify"
+PACKAGE_NAME="nvm"
+TEST_NAME="nvm"
+DISPLAY_NAME="Node Version Manager"
 
 # Installation function
 function install {
-	snap install $PACKAGE_NAME
+    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+	SH=$(printf '~/.%src' ${SHELL##*/})
+	source "$SH"
 }
 
 # Checks if package is installed and aborts if already exists.
@@ -31,5 +33,5 @@ function test_installation {
 
 # Execution
 check_package_status			# Check if installed
-install	> out.log 2> err.log	# Install package if missing
-test_installation				# Test if installation was successful
+install > out.log 2> err.log	# Install package if missing
+test_installation	    		# Test if installation was successful

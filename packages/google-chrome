@@ -1,11 +1,14 @@
 #!/bin/bash
-PACKAGE_NAME="spotify"
+PACKAGE_NAME="google-chrome-stable"
 TEST_NAME=$PACKAGE_NAME
-DISPLAY_NAME="Spotify"
+DISPLAY_NAME="Google Chrome"
 
 # Installation function
 function install {
-	snap install $PACKAGE_NAME
+    wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+	echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | tee /etc/apt/sources.list.d/google-chrome.list
+	sudo apt-get update 
+	sudo apt-get install google-chrome-stable
 }
 
 # Checks if package is installed and aborts if already exists.
@@ -31,5 +34,5 @@ function test_installation {
 
 # Execution
 check_package_status			# Check if installed
-install	> out.log 2> err.log	# Install package if missing
-test_installation				# Test if installation was successful
+install > out.log 2> err.log	# Install package if missing
+test_installation	    		# Test if installation was successful

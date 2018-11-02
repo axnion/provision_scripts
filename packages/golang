@@ -1,11 +1,11 @@
 #!/bin/bash
-PACKAGE_NAME="spotify"
-TEST_NAME=$PACKAGE_NAME
-DISPLAY_NAME="Spotify"
+PACKAGE_NAME="go"
+TEST_NAME="go"
+DISPLAY_NAME="Go(lang)"
 
 # Installation function
 function install {
-	snap install $PACKAGE_NAME
+	snap install go --classic
 }
 
 # Checks if package is installed and aborts if already exists.
@@ -31,5 +31,5 @@ function test_installation {
 
 # Execution
 check_package_status			# Check if installed
-install	> out.log 2> err.log	# Install package if missing
-test_installation				# Test if installation was successful
+install > out.log 2> err.log	# Install package if missing
+test_installation	    		# Test if installation was successful
