@@ -6,6 +6,7 @@ DISPLAY_NAME="Tilix"
 # Installation function
 function install {
     apt install $PACKAGE_NAME -y
+	#dconf load /com/gexperts/Tilix/ < $DOTFILES/tilix.dconf
 }
 
 # Checks if package is installed and aborts if already exists.
