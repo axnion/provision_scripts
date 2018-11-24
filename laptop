@@ -9,13 +9,9 @@ $PACKAGES/spotify
 $PACKAGES/keepassx
 $PACKAGES/zsh
 $PACKAGES/vim
-$PACKAGES/dropbox
 $PACKAGES/google-chrome
 $PACKAGES/telegram
-$PACKAGES/slack
 $PACKAGES/postman
-$PACKAGES/nvidia-drivers
 $PACKAGES/golang
 $PACKAGES/mailspring
-#$PACKAGES/nvm
 
