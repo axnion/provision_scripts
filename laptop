@@ -14,4 +14,4 @@ $PACKAGES/telegram
 $PACKAGES/postman
 $PACKAGES/golang
 $PACKAGES/mailspring
-
+$PACKAGES/tmux
