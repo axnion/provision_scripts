@@ -2,15 +2,16 @@
 
 source ./env
 
+$PACKAGES/tmux
 $PACKAGES/discord
 $PACKAGES/vscode
 $PACKAGES/docker
 $PACKAGES/spotify
+$PACKAGES/caprine
 $PACKAGES/keepassx
 $PACKAGES/zsh
 $PACKAGES/vim
 $PACKAGES/dropbox
-$PACKAGES/tilix
 $PACKAGES/google-chrome
 $PACKAGES/telegram
 $PACKAGES/slack

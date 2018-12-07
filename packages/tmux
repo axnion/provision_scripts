@@ -1,15 +1,13 @@
 #!/bin/bash
-PACKAGE_NAME="vim"
+PACKAGE_NAME="tmux"
 TEST_NAME=$PACKAGE_NAME
-DISPLAY_NAME="Vim"
+DISPLAY_NAME="tmux"
 
 # Installation function
 function install {
-	# Install
     apt install $PACKAGE_NAME -y
 
-	# Configure
-	ln -sf $DOTFILES/vimrc ~/.vimrc
+	ln -sf $DOTFILES/tmux.conf ~/.tmux.conf
 }
 
 # Checks if package is installed and aborts if already exists.

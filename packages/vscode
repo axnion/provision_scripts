@@ -4,7 +4,8 @@ TEST_NAME=$PACKAGE_NAME
 DISPLAY_NAME="Visual Studio Code"
 
 function install {
-	snap install --classic $PACKAGE_NAME
+	curl -o /tmp/vscode.deb -L https://go.microsoft.com/fwlink/?LinkID=760868
+	dpkg -i /tmp/vscode.deb
 }
 
 # Checks if package is installed and aborts if already exists.
