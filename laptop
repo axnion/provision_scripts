@@ -1,0 +1,17 @@
+#!/bin/bash
+
+source ./env
+
+$PACKAGES/discord
+$PACKAGES/vscode
+$PACKAGES/docker
+$PACKAGES/spotify
+$PACKAGES/keepassx
+$PACKAGES/zsh
+$PACKAGES/vim
+$PACKAGES/google-chrome
+$PACKAGES/telegram
+$PACKAGES/postman
+$PACKAGES/golang
+$PACKAGES/mailspring
+$PACKAGES/tmux

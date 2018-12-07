@@ -1,12 +1,11 @@
 #!/bin/bash
 PACKAGE_NAME="tmux"
 TEST_NAME=$PACKAGE_NAME
-DISPLAY_NAME="tmux"
+DISPLAY_NAME="Tmux"
 
 # Installation function
 function install {
     apt install $PACKAGE_NAME -y
-
 	ln -sf $DOTFILES/tmux.conf ~/.tmux.conf
 }
 
